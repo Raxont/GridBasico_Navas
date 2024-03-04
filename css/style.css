@@ -4,8 +4,104 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    box-sizing: border-box;
 }
 
 body{
     background: var(--color-principal);
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(9,1fr);
+    grid-gap: 8px;
+    grid-template-areas: 
+    "menu menu menu menu menu menu menu menu menu menu menu menu"
+    "notification notification notification notification sales sales sales sales sales sales balance balance"
+    "notification notification notification notification sales sales sales sales sales sales balance balance"
+    "revenue revenue revenue revenue sales sales sales sales sales sales balance balance"
+    "revenue revenue revenue revenue sales sales sales sales sales sales devs devs"
+    "revenue revenue revenue revenue sales sales sales sales sales sales devs devs"
+    "product product product product product test test test test test test test"
+    "product product product product product test test test test test test test"
+    "product product product product product test test test test test test test"
+    ;
+    width: 800px;
+    height: 600px;
+    margin: 15px auto;
+    background: var(--color-principal); 
+}
+.container div{
+    background: var(--color-secundary);
+    border-radius: 5px;
+}
+.item1 div{
+    width: 50%;
+    background: rebeccapurple;
+}
+.item1 div ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.item1 div ul li{
+    list-style: none;
+}
+.item1 div ul li a{
+    text-decoration: none;
+}
+.item1{
+    background: red;
+    grid-area: menu;
+    
+}
+.item2{
+    background: blue;
+    grid-area: notification;
+}
+.item3{
+    background: orange;
+    grid-area: sales;
+}
+.item4{
+    background: black;
+    grid-area: revenue;
+}
+.item5{
+    background: violet;
+    grid-area: balance;
+}
+.item6{
+    background: yellow;
+    grid-area: devs;
+}
+.item7{
+    background: green;
+    grid-area: product;
+}
+.item8{
+    background: brown;
+    grid-area: test;
+}
+@media(width<800px){
+    .container{
+        width: 100%;
+        margin: 0;
+        padding: 2px 10px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+    "menu"
+    "notification"
+    "sales"
+    "revenue"
+    "balance"
+    "devs"
+    "product"
+    "test"
+    ;
+    }
+    .container div{
+        border-radius: 0px;
+    }
 }
