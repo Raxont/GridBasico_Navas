@@ -1,107 +1,326 @@
 @import url(variables.css);
-
 *{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     box-sizing: border-box;
 }
-
 body{
-    background: var(--color-principal);
+    background: var(--color-primary);
 }
-
 .container{
     display: grid;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: repeat(9,1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(9, 1fr);
     grid-gap: 8px;
     grid-template-areas: 
     "menu menu menu menu menu menu menu menu menu menu menu menu"
     "notification notification notification notification sales sales sales sales sales sales balance balance"
     "notification notification notification notification sales sales sales sales sales sales balance balance"
-    "revenue revenue revenue revenue sales sales sales sales sales sales balance balance"
-    "revenue revenue revenue revenue sales sales sales sales sales sales devs devs"
-    "revenue revenue revenue revenue sales sales sales sales sales sales devs devs"
-    "product product product product product test test test test test test test"
-    "product product product product product test test test test test test test"
-    "product product product product product test test test test test test test"
+    "week week week week sales sales sales sales sales sales balance balance "
+    "week week week week sales sales sales sales sales sales devs devs"
+    "week week week week sales sales sales sales sales sales devs devs"
+    "product product product product product timeline timeline timeline timeline timeline timeline timeline"
+    "product product product product product timeline timeline timeline timeline timeline timeline timeline"
+    "product product product product product timeline timeline timeline timeline timeline timeline timeline"
     ;
     width: 800px;
     height: 600px;
     margin: 15px auto;
-    background: var(--color-principal); 
+    background: var(--color-primary);
+    /*border: 1px solid var(--color-primary);*/
+    /* box-shadow: var(--color-shadows); */
 }
 .container div{
-    background: var(--color-secundary);
     border-radius: 5px;
+    width: 100%;
 }
-.item1 div{
-    width: 50%;
-    background: rebeccapurple;
-}
-.item1 div ul {
+.item1{
+    background: var(--color-secundary);
+    grid-area: menu; 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.item1 div ul li{
+
+.item1_menu{
+    /*background: rosybrown;*/
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item1_menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
     list-style: none;
+    /*background-color: rebeccapurple;*/
 }
-.item1 div ul li a{
-    text-decoration: none;
+
+.item1_usuario{
+    background: linear-gradient(to right ,var(--color-radient-1), var(--color-radient-2));
+    display: flex;
+    /*background: black;*/
+    width: 50%;
+    align-items: center;
 }
-.item1{
-    background: red;
-    grid-area: menu;
-    
+
+.item1_usuario div ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+    list-style: none;
+    /*background-color: teal;*/
 }
+
+.item1_usuario div ul li{
+    font-size: 20px;
+}
+
+.item1_usuario ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    list-style: none;
+    /*background-color: yellow;*/
+}
+
+.item1_usuario ul li div h1{
+    display: flex;
+    justify-content: start;
+}
+
+.item1_usuario div h1,
+.item1_usuario div p{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    width: 150px;
+    /*background-color: lawngreen;*/
+}
+
+.item1_usuario div h1{
+    font-size: 15px;
+}
+
+.item1_usuario div p{
+    font-size: 10px;
+}
+
+.item1_usuario ul div i{
+    /*background: firebrick;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: -20px;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+}
+
 .item2{
-    background: blue;
+    background: lightskyblue;
     grid-area: notification;
 }
+
+.item2 .item2_texto{
+    /*background: yellow;*/
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    line-height: 20px;
+    padding: 0px 10px;
+}
+
+.item2 .item2_texto p{
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.item2 .item2_texto i{
+    /*background: red;*/
+    width: 96%;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0px 10px;
+    margin-top: -40px;
+}
+
+.item2 .item2_imagen{
+    /*background: lightcoral;*/
+    height: 100px;
+    margin-top: 20px;
+    padding: 0px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.item2 .item2_imagen i{
+    font-size: 40px;
+}
+
 .item3{
-    background: orange;
+    background: var(--color-secundary);
     grid-area: sales;
 }
-.item4{
-    background: black;
-    grid-area: revenue;
+
+.item3_titulos{
+    /*background: rebeccapurple;*/
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 30%;
 }
-.item5{
-    background: violet;
+
+.item3_titulos h3{
+    /*background: lavenderblush;*/
+    display: flex;
+    font-size: 25px;
+    padding: 10px 15px;
+}
+
+.item3_texto{
+    /*background: lemonchiffon;*/
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: gray;
+    padding: 0px 15px;
+}
+
+.item3_texto div p{
+    /*background: red;*/
+    padding: 15px 0px;
+    font-size: 25px;
+}
+
+.item3_texto p{
+    /*background: green;*/
+    width: 20%;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+
+.item3_valores{
+    /*background: darkgray;*/
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 35%;
+    padding: 0px 17px;
+    line-height: 45px;
+}
+
+.item3_valores h2{
+    /*background: darkorange;*/
+    font-size: 35px;
+}
+
+.item3_valores p{
+    /*background: lightseagreen;*/
+    color: rgb(194, 235, 81);
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+}
+
+.item3_imagen{
+    /*background: lightcoral;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 28%;
+}
+
+.item3_imagen img{
+    width: 360px;
+}
+
+.item3_fecha{
+    /*color: gray;*/
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.item4{
+    background: var(--color-secundary);
     grid-area: balance;
 }
+
+.item4_caja1{
+    /*background: darkorange;*/
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+    line-height: 22px;
+    width: 100%;
+    height: 33%;
+}
+
+.item4_caja1 div p{
+    font-size: 10px;
+}
+
+.item4_caja2{
+    background: lightgreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px 10px;
+    line-height: 22px;
+    width: 100%;
+    height: 34%;
+}
+
+.item4_caja2 div p{
+    font-size: 10px;
+}
+
+.item4_caja3{
+    /*background: springgreen;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px 10px;
+    line-height: 25px;
+    width: 100%;
+    height: 34%;
+}
+
+.item4_caja3 div p{
+    font-size: 10px;
+}
+
+.item5{
+    background: violet;
+    grid-area: week;
+}
+
 .item6{
     background: yellow;
     grid-area: devs;
 }
+
 .item7{
     background: green;
     grid-area: product;
 }
+
 .item8{
     background: brown;
-    grid-area: test;
-}
-@media(width<800px){
-    .container{
-        width: 100%;
-        margin: 0;
-        padding: 2px 10px;
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-    "menu"
-    "notification"
-    "sales"
-    "revenue"
-    "balance"
-    "devs"
-    "product"
-    "test"
-    ;
-    }
-    .container div{
-        border-radius: 0px;
-    }
+    grid-area: timeline;
 }
